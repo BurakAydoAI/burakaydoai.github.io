@@ -1,9 +1,11 @@
 import { defineConfig } from "astro/config";
-// import content from "@astrojs/content";
 
+// import content from "@astrojs/content";
+// test
 // https://astro.build/config
 export default defineConfig({
   site: "https://BurakAydoAI.github.io",
+  base: "/pr-preview/pr-5/",
   vite: {
     build: {
       chunkSizeWarningLimit: 1000,

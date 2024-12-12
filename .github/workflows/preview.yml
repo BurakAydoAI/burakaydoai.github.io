@@ -1,0 +1,42 @@
+name: Deploy PR Preview
+# Demo
+on:
+  pull_request:
+    branches: [main]
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
+  # Allows you to run this workflow manually from the Actions tab on GitHub.
+  workflow_dispatch:
+
+# Allow this job to clone the repo and create a page deployment
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  pull-requests: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout your repository using git
+        uses: actions/checkout@v4
+
+      - name: Cache Images
+        uses: actions/cache@v4
+        with:
+          path: node_modules/.astro/assets
+          key: ${{ runner.os }}-images-${{ hashFiles('node_modules/.astro/assets') }}
+          restore-keys: |
+            ${{ runner.os }}-images
+
+      - name: Install, build, and upload your site output
+        uses: withastro/action@v2
+        with:
+          node-version: 18.17.1
+          package-manager: npm
+      - name: Deploy PR Preview
+        uses: rossjrw/pr-preview-action@v1.4.8

@@ -9,7 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.0.3",
+    "astro": "^5.0.5",
     "jquery": "^3.7.1",
     "js-cookie": "^3.0.5"
   }

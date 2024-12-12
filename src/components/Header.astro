@@ -11,6 +11,9 @@ import MenuEN from "../components/MenuEN.astro";
 import MenuTR from "../components/MenuTR.astro";
 import type { Language } from "../utils/types";
 
+const astroBase = import.meta.env.BASE_URL;
+
+console.log({ astroBase });
 interface Props {
   data: any;
   lang: Language;
@@ -306,24 +309,36 @@ for (let i = 0; i < filteredEntries.length; i++) {
         <span class="search-cancel">{data.common.cancel}</span>
       </div>
       <div class="static-entry">
-        <a href={`/${baseUrl}automation/`}>{data.common.menu.automation}</a>
+        <a href={`${import.meta.env.BASE_URL}/${baseUrl}automation/`}
+          >{data.common.menu.automation}</a
+        >
         <button data-go-to="/automation">&gt;</button>
       </div>
       <div class="static-entry">
-        <a href={`/${baseUrl}lighting/`}>{data.common.menu.lighting}</a>
+        <a href={`${import.meta.env.BASE_URL}/${baseUrl}lighting/`}
+          >{data.common.menu.lighting}</a
+        >
         <button data-go-to="/lighting">&gt;</button>
       </div>
       <div class="static-entry">
-        <a href={`/${baseUrl}distributors`}>{data.common.menu.distributors}</a>
+        <a href={`${import.meta.env.BASE_URL}/${baseUrl}distributors`}
+          >{data.common.menu.distributors}</a
+        >
       </div>
       <div class="static-entry">
-        <a href={`/${baseUrl}support`}>{data.common.menu.support}</a>
+        <a href={`${import.meta.env.BASE_URL}/${baseUrl}support`}
+          >{data.common.menu.support}</a
+        >
       </div>
       <div class="static-entry">
-        <a href={`/${baseUrl}contact`}>{data.common.menu.contact}</a>
+        <a href={`${import.meta.env.BASE_URL}/${baseUrl}contact`}
+          >{data.common.menu.contact}</a
+        >
       </div>
       <div class="static-entry">
-        <a href={`/${baseUrl}about`}>{data.common.menu.about}</a>
+        <a href={`${import.meta.env.BASE_URL}/${baseUrl}about`}
+          >{data.common.menu.about}</a
+        >
       </div>
     </div>
     <!-- Generated Menus -->
@@ -336,26 +351,39 @@ for (let i = 0; i < filteredEntries.length; i++) {
         <div>
           <!-- Logo -->
           <div class="logo">
-            <a href={`/${baseUrl}`} aria-label={data.common.menu.homepage}>
+            <a
+              href={`${import.meta.env.BASE_URL}${baseUrl}`}
+              aria-label={data.common.menu.homepage}
+            >
               <div class="icon-common-endalogo svg-image"></div>
             </a>
           </div>
 
           <!-- Horizontal Menu -->
           <div id="hmenu" class="hmenu">
-            <a href={`/${baseUrl}automation/`}>{data.common.menu.automation}</a>
+            <a href={`${import.meta.env.BASE_URL}${baseUrl}automation`}
+              >{data.common.menu.automation}</a
+            >
             <div>|</div>
-            <a href={`/${baseUrl}lighting/`}>{data.common.menu.lighting}</a>
+            <a href={`${import.meta.env.BASE_URL}/${baseUrl}lighting/`}
+              >{data.common.menu.lighting}</a
+            >
             <div>|</div>
-            <a href={`/${baseUrl}distributors`}
+            <a href={`${import.meta.env.BASE_URL}/${baseUrl}distributors`}
               >{data.common.menu.distributors}</a
             >
             <div>|</div>
-            <a href={`/${baseUrl}support`}>{data.common.menu.support}</a>
+            <a href={`${import.meta.env.BASE_URL}/${baseUrl}support`}
+              >{data.common.menu.support}</a
+            >
             <div>|</div>
-            <a href={`/${baseUrl}contact`}>{data.common.menu.contact}</a>
+            <a href={`${import.meta.env.BASE_URL}/${baseUrl}contact`}
+              >{data.common.menu.contact}</a
+            >
             <div>|</div>
-            <a href={`/${baseUrl}about`}>{data.common.menu.about}</a>
+            <a href={`${import.meta.env.BASE_URL}/${baseUrl}about`}
+              >{data.common.menu.about}</a
+            >
           </div>
 
           <!-- Search Bar -->
